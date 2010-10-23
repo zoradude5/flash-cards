@@ -1,14 +1,15 @@
 $(document).ready(function() {
-    $('#question').keydown(function(e) {
+    var nm = new NotificationManager($('body'));
+    $('#question').keypress(function(e) {
         if(e.keyCode == '13') {
             $('#answer').focus();
         }
     });
-    $('#answer').keydown(function(e) {
+    $('#answer').keypress(function(e) {
         if(e.keyCode == '13') {
             $('#question').focus();
+            nm.show("hello");
         }
     });
-
 
 });
