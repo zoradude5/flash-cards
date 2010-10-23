@@ -1,0 +1,19 @@
+body {
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+ 
+}
+div.a {
+    width:700px;
+    margin:150px auto;
+}
+div.b {
+    padding:15px;
+    border:1px solid;
+}
+.b h1 {
+    margin: 0px;
+}
+.textareas {
+    width: 300px;
+    height: 200px;
+}
