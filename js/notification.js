@@ -1,18 +1,21 @@
 NotificationManager = function(parent) {
     this.parent = parent;
-    this.div = $(document.createElement('div')).addClass('lightbox');
-    
+    this.content = $(document.createElement('div'));
+    this.div = $(document.createElement('div')).addClass('lightbox').append(this.content);
     
     this.parent.append(this.div);
 }
 
 NotificationManager.prototype.show = function(content) {
     var self = this;
-    this.div.text(content);
+    this.content.text(content);
     self.div.animate({opacity: 1}, 'slow');
+    self.div.css('zIndex','10');
     this.div.queue(function() {
         setTimeout(function() {
-            self.div.animate({opacity: 0}, 'slow');
+            self.div.animate({opacity: 0}, 'slow', function() {
+                self.div.css('zIndex','-1')
+            });
             self.div.dequeue();
         }, 1000);
     });

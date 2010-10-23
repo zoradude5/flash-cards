@@ -21,12 +21,17 @@ div.b {
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 50px;
-    width: 100px;
-    padding: 5px;
-    text-align: center;
+    width: 100%;
     margin: 250px auto;
     opacity: 0;
+    z-index: -1;
+}
+.lightbox div{
+    background: white;
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    margin: 0px auto;
     border: 1px solid;
-    z-index: 10;
+    text-align: center;
 }
